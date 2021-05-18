@@ -49,17 +49,26 @@ const checkYuGiOh = (n) => {
         for(let i = 1; i <= stringValue; i++){
             stringOuput.push(i)
         }
+        // Looping throught the stringOuput array
         for(let j = 0; j < stringOuput.length; j++){
+            // Check if devisible by 5, 3 and 2
             if(stringOuput[j] % 2 === 0 && stringOuput[j] % 3 === 0 && stringOuput[j] % 5 === 0){
                 stringOuput[j] = "yu-gi-oh"
+
+                // Check if divisible by 2 and 3
             }else if(stringOuput[j] % 2 === 0 && stringOuput[j] % 3 === 0){
                 stringOuput[j] = "yu-gi"
+
+                // Check if divisible by 2 and 5
             }else if(stringOuput[j] % 2 === 0 && stringOuput[j] % 5 === 0){
                 stringOuput[j] = "yu-oh"
+                // Check for 2
             }else if(stringOuput[j] % 2 === 0){
                 stringOuput[j] = "yu"
+                // check for 3
             }else if(stringOuput[j] % 3 === 0){
                 stringOuput[j] = "gi"
+                // check for 5
             }else if(stringOuput[j] % 5 === 0){
                 stringOuput[j] = "oh"
             }
@@ -83,16 +92,24 @@ const checkYuGiOh = (n) => {
             final.push(i)
         }
         for(let j = 0; j < final.length; j++){
+            // Check if devisible by 5, 3 and 2
             if(final[j] % 2 === 0 && final[j] % 3 === 0 && final[j] % 5 === 0){
                 final[j] = "yu-gi-oh"
+
+                // Check if divisible by 2 and 3
             }else if(final[j] % 2 === 0 && final[j] % 3 === 0){
                 final[j] = "yu-gi"
+
+                // Check if divisible by 2 and 5
             }else if(final[j] % 2 === 0 && final[j] % 5 === 0){
                 final[j] = "yu-oh"
+                // check for 2
             }else if(final[j] % 2 === 0){
                 final[j] = "yu"
+                // check for 3
             }else if(final[j] % 3 === 0){
                 final[j] = "gi"
+                // check for 5
             }else if(final[j] % 5 === 0){
                 final[j] = "oh"
             }
