@@ -9,32 +9,32 @@ const convertFahrToCelcius = (value) => {
     // Checking for an object
     if(value.constructor === Object && !Array.isArray(value)){
         obj = value
-        console.log(`${JSON.stringify(obj)} is not a valid number but a/an object`)
+        return `${JSON.stringify(obj)} is not a valid number but a/an object`
 
         // checking for array
     } else if (value.constructor === Array) {
         arrayValue = value
-        console.log(`[${arrayValue}] is not a valid number but a/an array.`)
+        return `[${arrayValue}] is not a valid number but a/an array.`
 
         // Checking for a number and performing calculation
     } else if(value.constructor === Number) {
         num = value
         const celcius = (num - 32) * 5/9
-        console.log(celcius.toFixed(4))
+        return celcius.toFixed(4)
 
         // Checking for string and calculating
     } else if(value.constructor === String){
         stringValue = parseInt(value)
         const celcius = (stringValue - 32) * 5/9
-        console.log(celcius.toFixed(4))
+        return celcius.toFixed(4)
         
     }
 
 }
-convertFahrToCelcius([1, 2, 3])
-convertFahrToCelcius({temp: 0, man: "woman"})
-convertFahrToCelcius(0)
-convertFahrToCelcius("0")
+console.log(convertFahrToCelcius([1, 2, 3]))
+console.log(convertFahrToCelcius({temp: 0, man: "woman"}))
+console.log(convertFahrToCelcius(0))
+console.log(convertFahrToCelcius("0"))
 
 
 
@@ -42,6 +42,19 @@ convertFahrToCelcius("0")
 //QUESTION TWO(2)
 
 const checkYuGiOh = (n) => {
+    //performing for long string that cannot be convert to an integer
+    // let test = parseInt(n)
+    if(n.constructor === String){
+        // isNaN(parseInt(n))
+        let testError = []
+        testError = parseInt(n)
+        if(isNaN(testError)){
+            return `Invalid parameter: "${n}"`
+        }
+        
+    }
+
+
     // Performing operation for string input and converting to an integer
     if(n.constructor === String){
         let stringOuput = []
@@ -74,13 +87,7 @@ const checkYuGiOh = (n) => {
             }
             
         }
-        console.log(stringOuput)
-    }
-
-    //performing for long string that cannot be convert to an integer
-    let error = parseInt(n)
-    if(isNaN(error)){
-        console.log(`Invalid parameter: "${n}"`)
+        return stringOuput
     }
 
 
@@ -116,11 +123,11 @@ const checkYuGiOh = (n) => {
             
         }
     
-        console.log(final)
+        return final
     }
 }
-checkYuGiOh(10)
-checkYuGiOh("5")
-checkYuGiOh("fizzbuzz is meh")
+console.log(checkYuGiOh(10))
+console.log(checkYuGiOh("5"))
+console.log(checkYuGiOh("fizzbuzz is meh"))
 
 
